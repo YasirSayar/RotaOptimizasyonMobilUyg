@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.rotaoptjv">
+
+    <!-- Gerekli İzinler -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RotaOptJv"
+        tools:targetApi="31">
+        <!-- Google Maps API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}"  />
+        <!-- Giriş Ekranı (Ana ekran olarak ayarlandı) -->
+        <activity
+            android:name=".GirisEkraniActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RouteSegmentsActivity"
+            android:exported="false"
+            android:label="Rota Parçaları" />
+        <activity
+            android:name=".PersonListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PersonDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CustomerListActivity"
+            android:label="@string/customer_list"
+            android:parentActivityName=".GirisEkraniActivity" />
+
+        <!-- CustomerEditActivity için güncellenmiş intent-filter bölümü -->
+        <activity
+            android:name=".CustomerEditActivity"
+            android:exported="true"
+            android:label="@string/customer_edit"
+            android:parentActivityName=".CustomerListActivity">
+
+            <!-- Konum linkleri (geo: veya http/https) -->
+            <intent-filter android:label="RotaOpt • Konumdan Müşteri Ekle">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="geo"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+
+            <!-- WhatsApp vb. metin paylaşımı -->
+            <intent-filter android:label="RotaOpt • Konum Paylaşımı">
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".RouteSettingsActivity" android:exported="false" />
+
+    </application>
+
+</manifest>

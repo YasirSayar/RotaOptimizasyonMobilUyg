@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tv_name" type="id" />
+    <item name="tv_address" type="id" />
+    <item name="tv_coordinates" type="id" />
+    <item name="btn_open_location" type="id" />
+    <item name="btn_mark_completed" type="id" />
+    <item name="tv_address_label" type="id" />
+</resources>
