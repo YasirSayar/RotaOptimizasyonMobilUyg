@@ -4,56 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:background="#F4F7FC"
+    android:padding="24dp"
     tools:context=".GirisEkraniActivity">
 
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Rota Yönetim Sistemi"
-        android:textColor="#2E3A59"
-        android:textSize="24sp"
+        android:layout_marginTop="60dp"
+        android:text="Rota Yönetimi"
+        android:textColor="#1E293B"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <TextView
+        android:id="@+id/subtitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Bugün nereye gidiyoruz?"
+        android:textColor="#64748B"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCustomers"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginTop="60dp"
         android:text="Müşteriler"
-        android:padding="16dp"
+        android:textColor="#3B82F6"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/titleTextView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:cornerRadius="16dp"
+        app:strokeColor="#3B82F6"
+        app:strokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="80dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subtitleTextView" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnRouteSettings"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginTop="20dp"
         android:text="Rota Ayarları"
-        android:padding="16dp"
+        android:textColor="#3B82F6"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/btnCustomers"
-        app:layout_constraintStart_toStartOf="parent"
+        app:cornerRadius="16dp"
+        app:strokeColor="#3B82F6"
+        app:strokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCustomers" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnStart"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Başla"
-        android:padding="16dp"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/btnRouteSettings"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="72dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#10B981"
+        android:text="Optimizasyona Başla"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="16dp"
+        app:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnRouteSettings"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
